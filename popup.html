@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leads Maps</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+        <path d="M10 2C7.24 2 5 4.24 5 7c0 4.25 5 11 5 11s5-6.75 5-11c0-2.76-2.24-5-5-5zm0 6.5A1.5 1.5 0 1 1 10 5a1.5 1.5 0 0 1 0 3z" fill="#1A73E8"/>
+      </svg>
+      <span class="logo-text">Leads Maps</span>
+    </div>
+    <div class="version">v1.0</div>
+  </header>
+
+  <!-- Estado: no estás en Maps -->
+  <div class="state-panel" id="panel-no-maps">
+    <div class="no-maps-icon">🗺️</div>
+    <p class="no-maps-msg">Abrí Google Maps y realizá una búsqueda para comenzar.</p>
+  </div>
+
+  <!-- Estado principal -->
+  <div class="state-panel" id="panel-main">
+
+    <div class="count-display">
+      <span id="lead-count" class="count-number">0</span>
+      <span class="count-label">leads encontrados</span>
+    </div>
+
+    <div id="status-text" class="status-text">Listo para raspar</div>
+
+    <div class="progress-bar-wrap" id="progress-bar-wrap">
+      <div class="progress-bar" id="progress-bar"></div>
+    </div>
+
+    <!-- Preview de leads -->
+    <div id="leads-preview" class="leads-preview"></div>
+
+    <!-- Error -->
+    <div id="error-msg" class="error-msg"></div>
+
+    <!-- Acciones -->
+    <div class="actions">
+      <button id="btn-scrape" class="btn btn-primary">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M5.5 8h5M8 5.5v5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        Raspar
+      </button>
+      <button id="btn-stop" class="btn btn-secondary">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <rect x="4.5" y="4.5" width="7" height="7" rx="1" stroke="currentColor" stroke-width="1.5"/>
+        </svg>
+        Detener
+      </button>
+    </div>
+
+    <div class="actions actions-secondary">
+      <button id="btn-export" class="btn btn-export">
+        <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
+          <path d="M7.5 1v9M4 7l3.5 3.5L11 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M2 11v1.5A1.5 1.5 0 0 0 3.5 14h8a1.5 1.5 0 0 0 1.5-1.5V11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        Exportar CSV
+      </button>
+      <button id="btn-clear" class="btn btn-ghost">Limpiar</button>
+    </div>
+
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
