@@ -102,7 +102,16 @@ Since no source files exist yet, the recommended order is:
 ## Web Store Package
 
 ```bash
-zip -r maps-lead-scraper.zip . -x "*.DS_Store" -x "CLAUDE.md" -x "README.md"
+zip -r captio-maps.zip . \
+  -x "*.DS_Store" \
+  -x ".git/*" \
+  -x ".claude/*" \
+  -x ".gitignore" \
+  -x "CLAUDE.md" \
+  -x "README.md" \
+  -x "COMPETITIVE-ANALYSIS.md" \
+  -x "docs/*" \
+  -x "privacy-policy.html"
 ```
 
 Required assets: icon 128×128 PNG, ≥1 screenshot (1280×800 or 640×400), short description (max 132 chars), privacy policy (required because `storage` + `activeTab` are declared — host on GitHub Pages or public Notion).

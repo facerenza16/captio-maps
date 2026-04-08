@@ -50,7 +50,6 @@ function shouldStopScraping() {
 function buildExportLeads(leads) {
   return leads.map(lead => {
     const cleaned = { ...lead };
-    delete cleaned._skip;
     delete cleaned._detailVisited;
     delete cleaned._websiteFetchAttempted;
     return cleaned;
@@ -262,10 +261,6 @@ async function enrichLeads(leads, fetchEmail) {
       lead._websiteFetchAttempted = true;
     }
 
-    if (fetchEmail && lead._detailVisited && (!lead.sitio_web || lead._websiteFetchAttempted) && !lead.email) {
-      lead._skip = true;
-    }
-
     const back = document.querySelector(SELECTORS.backBtn);
     if (back) { back.click(); } else { history.back(); }
     await sleep(BACK_WAIT_MS);
@@ -347,16 +342,12 @@ async function scrapeWithScroll(fetchEmail) {
     return;
   }
 
-  const finalLeads = fetchEmail
-    ? allLeads.filter(l => !l._skip)
-    : allLeads;
-
   isRunning = false;
   currentPhase = 'idle';
   chrome.runtime.sendMessage({
     type: 'SCRAPE_DONE',
-    leads: buildExportLeads(finalLeads),
-    count: finalLeads.length,
+    leads: buildExportLeads(allLeads),
+    count: allLeads.length,
   });
 }
 

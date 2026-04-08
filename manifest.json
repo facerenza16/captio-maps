@@ -1,10 +1,11 @@
 {
   "manifest_version": 3,
-  "name": "Buscador de Leads en Google Maps",
+  "name": "Captio Maps",
   "version": "1.1.0",
   "description": "Extrae negocios de Google Maps y exporta a CSV.",
   "permissions": ["storage", "activeTab", "scripting"],
-  "host_permissions": ["https://www.google.com/maps/*", "http://*/*", "https://*/*"],
+  "host_permissions": ["https://www.google.com/maps/*"],
+  "optional_host_permissions": ["http://*/*", "https://*/*"],
   "action": {
     "default_popup": "popup.html",
     "default_icon": {

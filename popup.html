@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Leads Maps</title>
+  <title>Captio Maps</title>
   <link rel="stylesheet" href="popup.css">
 </head>
 <body>
@@ -13,7 +13,7 @@
       <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
         <path d="M10 2C7.24 2 5 4.24 5 7c0 4.25 5 11 5 11s5-6.75 5-11c0-2.76-2.24-5-5-5zm0 6.5A1.5 1.5 0 1 1 10 5a1.5 1.5 0 0 1 0 3z" fill="#1A73E8"/>
       </svg>
-      <span class="logo-text">Leads Maps</span>
+      <span class="logo-text">Captio Maps</span>
     </div>
     <div class="version">v1.1</div>
   </header>
@@ -32,7 +32,7 @@
       <span class="count-label">leads encontrados</span>
     </div>
 
-    <div id="status-text" class="status-text">Listo para raspar</div>
+    <div id="status-text" class="status-text">Listo para capturar</div>
 
     <div class="progress-bar-wrap" id="progress-bar-wrap">
       <div class="progress-bar" id="progress-bar"></div>
@@ -50,7 +50,7 @@
         <input type="checkbox" id="toggle-email">
         Buscar email en sitio web
       </label>
-      <span class="option-hint">Más lento</span>
+      <span class="option-hint" id="email-hint">La captura será más lenta.</span>
     </div>
 
     <!-- Acciones -->
@@ -60,7 +60,7 @@
           <circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1.5"/>
           <path d="M5.5 8h5M8 5.5v5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
         </svg>
-        Raspar
+        Capturar
       </button>
       <button id="btn-stop" class="btn btn-secondary">
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none">

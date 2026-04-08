@@ -1,4 +1,4 @@
-# Análisis Competitivo — Maps Lead Scraper
+# Análisis Competitivo — Captio Maps
 
 ## Herramientas similares existentes
 

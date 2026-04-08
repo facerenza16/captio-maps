@@ -16,6 +16,7 @@ const els = {
   panelMain:     $('panel-main'),
   panelNoMaps:   $('panel-no-maps'),
   toggleEmail:   $('toggle-email'),
+  emailHint:     $('email-hint'),
 };
 
 let cachedLeads = [];
@@ -50,7 +51,7 @@ function setState(state, opts = {}) {
   document.body.className = state ? `state-${state}` : '';
 
   const messages = {
-    default:        'Listo para raspar',
+    default:        'Listo para capturar',
     raspando:       'Raspando resultados…',
     deteniendo:     'Deteniendo búsqueda y finalizando leads encontrados…',
     enriqueciendo:  opts.total
@@ -175,7 +176,7 @@ els.btnScrape.addEventListener('click', async () => {
 
   chrome.tabs.sendMessage(tab.id, { type: 'START_SCRAPE', fetchEmail }, resp => {
     if (chrome.runtime.lastError || !resp?.ok) {
-      setState('error', { error: resp?.error || 'No se pudo iniciar el raspado. Recargá la página de Maps e intentá de nuevo.' });
+      setState('error', { error: resp?.error || 'No se pudo iniciar la captura. Recargá la página de Maps e intentá de nuevo.' });
     }
   });
 });
@@ -229,7 +230,7 @@ function exportToCSV(leads) {
   const csv = '\uFEFF' + [EXPORT_COLUMNS.map(column => column.header).join(','), ...rows].join('\n');
   const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
   const url = URL.createObjectURL(blob);
-  downloadBlob(url, `leads_maps_${new Date().toISOString().split('T')[0]}.csv`);
+  downloadBlob(url, `captio_maps_${new Date().toISOString().split('T')[0]}.csv`);
   URL.revokeObjectURL(url);
 }
 
@@ -280,7 +281,7 @@ function exportToExcel(leads) {
 
   const blob = new Blob(['\uFEFF', html], { type: 'application/vnd.ms-excel;charset=utf-8;' });
   const url = URL.createObjectURL(blob);
-  downloadBlob(url, `leads_maps_${new Date().toISOString().split('T')[0]}.xls`);
+  downloadBlob(url, `captio_maps_${new Date().toISOString().split('T')[0]}.xls`);
   URL.revokeObjectURL(url);
 }
 
@@ -290,6 +291,22 @@ function downloadBlob(url, filename) {
   a.download = filename;
   a.click();
 }
+
+// ── Toggle hint de email ──────────────────────────────
+
+els.toggleEmail.addEventListener('change', async () => {
+  if (els.toggleEmail.checked) {
+    const granted = await chrome.permissions.request({
+      origins: ['http://*/*', 'https://*/*'],
+    });
+    if (!granted) {
+      els.toggleEmail.checked = false;
+      els.emailHint.classList.remove('visible');
+      return;
+    }
+  }
+  els.emailHint.classList.toggle('visible', els.toggleEmail.checked);
+});
 
 // ── Arrancar ───────────────────────────────────────────
 

@@ -1,4 +1,4 @@
-# Maps Lead Scraper — Chrome Extension
+# Captio Maps — Chrome Extension
 
 One-line description: Chrome extension that scrapes business leads from Google Maps and exports them to CSV, targeted at Spanish-speaking LatAm market.
 

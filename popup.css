@@ -325,10 +325,9 @@ body.state-error #btn-export-csv   { display: none; }
 /* ── Toggle Email ────────────────────────────────────── */
 .option-row {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
   margin-bottom: 14px;
-  gap: 8px;
+  gap: 6px;
 }
 
 .toggle-label {
@@ -349,9 +348,15 @@ body.state-error #btn-export-csv   { display: none; }
 }
 
 .option-hint {
-  font-size: 10.5px;
-  color: var(--text-dim);
-  white-space: nowrap;
+  font-size: 11px;
+  color: #d29922;
+  line-height: 1.4;
+  padding-left: 20px;
+  display: none;
+}
+
+.option-hint.visible {
+  display: block;
 }
 
 /* ── Estado enriqueciendo — mismo look que raspando ─── */

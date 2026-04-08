@@ -39,7 +39,7 @@ Crear un nuevo Google Form en [forms.google.com](https://forms.google.com) con l
 
 ## Configuración recomendada del form
 
-- **Título:** `Reporte de error — Leads Maps`
+- **Título:** `Reporte de error — Captio Maps`
 - **Descripción:** `Gracias por reportar el problema. Los campos técnicos se completaron automáticamente para ayudarnos a diagnosticar el error.`
 - **Recopilar dirección de email:** Activar (opcional, para poder responderle al usuario)
 - **Notificaciones por email:** Activar en Respuestas → ícono de campana → "Recibir notificaciones de respuestas nuevas"
