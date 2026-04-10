@@ -3,7 +3,7 @@
   "name": "Captio Maps",
   "version": "1.1.0",
   "description": "Extrae negocios de Google Maps y exporta a CSV.",
-  "permissions": ["storage", "activeTab", "scripting"],
+  "permissions": ["storage", "activeTab"],
   "host_permissions": ["https://www.google.com/maps/*"],
   "optional_host_permissions": ["http://*/*", "https://*/*"],
   "action": {

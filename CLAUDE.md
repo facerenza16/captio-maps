@@ -111,7 +111,9 @@ zip -r captio-maps.zip . \
   -x "README.md" \
   -x "COMPETITIVE-ANALYSIS.md" \
   -x "docs/*" \
-  -x "privacy-policy.html"
+  -x "privacy-policy.html" \
+  -x "icons/icon-base.*" \
+  -x "screenshots/*"
 ```
 
-Required assets: icon 128×128 PNG, ≥1 screenshot (1280×800 or 640×400), short description (max 132 chars), privacy policy (required because `storage` + `activeTab` are declared — host on GitHub Pages or public Notion).
+Required assets: icon 128×128 PNG, ≥1 screenshot (1280×800 or 640×400), short description (max 132 chars), privacy policy (required because `storage` + `activeTab` are declared — hosted at https://facerenza16.github.io/captio-maps/privacy-policy.html).

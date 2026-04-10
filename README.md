@@ -2,7 +2,7 @@
 
 One-line description: Chrome extension that scrapes business leads from Google Maps and exports them to CSV, targeted at Spanish-speaking LatAm market.
 
-**Status:** In development — planning complete, building MVP.
+**Status:** v1.1.0 — ready for Chrome Web Store publication.
 
 ## Overview
 
@@ -18,19 +18,12 @@ Target market: Spanish-speaking LatAm first. If it gains traction, expand to Por
 
 ## Next Steps
 
-- Build the extension (new session, dedicated project directory)
-- Test end-to-end: scraping, scroll loop, CSV export
-- Prepare Chrome Web Store assets (screenshots, description, privacy policy)
-- Publish to Chrome Web Store (start as unlisted for beta testing)
+- Publish to Chrome Web Store
 - Share with personal network for first feedback
 - Seed in LatAm entrepreneur and marketing communities
-
-## Key Dates / Deadlines
-
-No hard deadline. Goal: published on Chrome Web Store before end of Q2 2026.
 
 ## Notes
 
 The technical risk is DOM selector fragility: Google Maps regularly changes its class names. The mitigation is declaring all selectors in a single `SELECTORS` object in `content.js` so fixes are localized to one place.
 
-V2 features (not in MVP): phone and website scraping (requires opening each result individually), Google Sheets export (requires OAuth), support for other data sources (LinkedIn, directories).
+V2 features (not in MVP): Google Sheets export (requires OAuth), support for other data sources (LinkedIn, directories).
