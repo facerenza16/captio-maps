@@ -102,7 +102,7 @@ Since no source files exist yet, the recommended order is:
 ## Web Store Package
 
 ```bash
-zip -r captio-maps.zip . \
+zip -r captio-genie.zip . \
   -x "*.DS_Store" \
   -x ".git/*" \
   -x ".claude/*" \
@@ -116,4 +116,4 @@ zip -r captio-maps.zip . \
   -x "screenshots/*"
 ```
 
-Required assets: icon 128×128 PNG, ≥1 screenshot (1280×800 or 640×400), short description (max 132 chars), privacy policy (required because `storage` + `activeTab` are declared — hosted at https://facerenza16.github.io/captio-maps/privacy-policy.html).
+Required assets: icon 128×128 PNG, ≥1 screenshot (1280×800 or 640×400), short description (max 132 chars), privacy policy (required because `storage` + `activeTab` are declared — hosted at https://facerenza16.github.io/captio-genie/privacy-policy.html).

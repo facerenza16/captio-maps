@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "Captio Maps",
+  "name": "Captio Genie",
   "version": "1.1.0",
-  "description": "Extrae negocios de Google Maps y exporta a CSV.",
+  "description": "Guardá los negocios que ves en Google Maps y exportalos a Excel o CSV en un clic.",
   "permissions": ["storage", "activeTab"],
   "host_permissions": ["https://www.google.com/maps/*"],
   "optional_host_permissions": ["http://*/*", "https://*/*"],

@@ -1,4 +1,4 @@
-# Análisis Competitivo — Captio Maps
+# Análisis Competitivo — Captio Genie
 
 ## Herramientas similares existentes
 

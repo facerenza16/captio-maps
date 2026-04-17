@@ -230,7 +230,7 @@ function exportToCSV(leads) {
   const csv = '\uFEFF' + [EXPORT_COLUMNS.map(column => column.header).join(','), ...rows].join('\n');
   const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
   const url = URL.createObjectURL(blob);
-  downloadBlob(url, `captio_maps_${new Date().toISOString().split('T')[0]}.csv`);
+  downloadBlob(url, `captio_genie_${new Date().toISOString().split('T')[0]}.csv`);
   URL.revokeObjectURL(url);
 }
 
@@ -281,7 +281,7 @@ function exportToExcel(leads) {
 
   const blob = new Blob(['\uFEFF', html], { type: 'application/vnd.ms-excel;charset=utf-8;' });
   const url = URL.createObjectURL(blob);
-  downloadBlob(url, `captio_maps_${new Date().toISOString().split('T')[0]}.xls`);
+  downloadBlob(url, `captio_genie_${new Date().toISOString().split('T')[0]}.xls`);
   URL.revokeObjectURL(url);
 }
 
